@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zongo Kévin - Développeur Web & Mobile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2D5BFF;
+            --primary-dark: #1A49CC;
+            --secondary: #00D4AA;
+            --dark: #121826;
+            --light: #F5F7FA;
+            --gray: #6C757D;
+            --dark-gray: #2A3142;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        section {
+            padding: 80px 5%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(18, 24, 38, 0.95);
+            padding: 20px 5%;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 15px 5%;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-gray) 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--secondary);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            padding: 8px 20px;
+            background: #E9ECFF;
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: #F8F9FF;
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-tech span {
+            padding: 4px 12px;
+            background: #F0F2FF;
+            color: var(--primary);
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #E9ECFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 5% 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content, 
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text, 
+            .hero-image,
+            .about-text,
+            .about-image,
+            .contact-info,
+            .contact-form {
+                width: 100%;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">Zongo<span>Kévin</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h3>Bonjour, je suis</h3>
+                <h1>Zongo <span>Kévin</span></h1>
+                <h3>Développeur Web & Mobile</h3>
+                <p>Je crée des applications mobiles avec Flutter, Firebase, Supabase et des sites web modernes avec HTML, CSS, JavaScript. J'ai développé 2 applications disponibles sur Play Store et 2 sites web fonctionnels.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Développeur Web Mobile">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>À propos de moi</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Je suis un développeur passionné spécialisé dans la création d'applications mobiles avec Flutter et de sites web modernes. J'ai une solide expérience avec Firebase et Supabase pour le backend, ainsi qu'avec les technologies web front-end.</p>
+                    <p>Mes deux applications publiées sur Play Store démontrent ma capacité à concevoir, développer et déployer des solutions mobiles complètes. De même, mes deux sites web fonctionnels illustrent mes compétences en développement web.</p>
+                    <p>Je suis constamment à la recherche de nouveaux défis pour améliorer mes compétences et créer des produits numériques de qualité.</p>
+                    
+                    <h3>Compétences techniques</h3>
+                    <div class="skills">
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="À propos de moi" style="border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes projets</h2>
+            </div>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="mobile">Applications mobiles</button>
+                <button class="filter-btn" data-filter="web">Sites web</button>
+            </div>
+            <div class="project-grid">
+                <!-- Projet 1 -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Application mobile 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Application E-commerce</h3>
+                        <p>Application Flutter avec Firebase pour la gestion des produits, authentification utilisateur et paiement en ligne. Disponible sur Play Store.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Firebase</span>
+                            <span>Dart</span>
+                            <span>Stripe</span>
+                        </div>
+                        <a href="#" class="btn">Voir les détails</a>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 -->
+                <div class="project-card" data-category="mobile">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Application mobile 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Application de Fitness</h3>
+                        <p>Application de suivi d'entraînement et de nutrition avec Supabase pour le backend et synchronisation des données en temps réel.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Supabase</span>
+                            <span>Dart</span>
+                            <span>API REST</span>
+                        </div>
+                        <a href="#" class="btn">Voir les détails</a>
+                    </div>
+                </div>
+                
+                <!-- Projet 3 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Site web 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Plateforme de Réservation</h3>
+                        <p>Site web de réservation en ligne avec interface administrateur et utilisateur, développé avec HTML, CSS, JavaScript et Firebase.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="#" class="btn">Voir les détails</a>
+                    </div>
+                </div>
+                
+                <!-- Projet 4 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Site web 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio d'Artiste</h3>
+                        <p>Site web portfolio responsive pour un artiste, avec galerie dynamique, formulaire de contact et design moderne.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Supabase</span>
+                        </div>
+                        <a href="#" class="btn">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-moi</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Travaillons ensemble !</h3>
+                    <p>Si vous avez un projet en tête ou si vous souhaitez discuter d'une opportunité de collaboration, n'hésitez pas à me contacter.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>zongo.kevin@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p>+33 6 12 34 56 78</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>France</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <input type="text" placeholder="Sujet" required>
+                        <textarea placeholder="Votre message" required></textarea>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Zongo<span>Kévin</span></div>
+                <p>Développeur Web & Mobile spécialisé Flutter, Firebase, Supabase</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Zongo Kévin. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Filtrage des projets
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Retirer la classe active de tous les boutons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Ajouter la classe active au bouton cliqué
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Formulaire de contact
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Récupérer les valeurs du formulaire
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            
+            // Simulation d'envoi
+            alert(`Merci ${name} ! Votre message a été envoyé. Je vous répondrai à ${email} dès que possible.`);
+            contactForm.reset();
+        });
+        
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observer les sections pour l'animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+        
+        // Initialiser les sections visibles
+        document.querySelectorAll('section').forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+</body>
+</html>
