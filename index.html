@@ -12,13 +12,11 @@
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
-            --primary-light: #60a5fa;
             --secondary: #10b981;
             --dark: #0f172a;
             --dark-gray: #1e293b;
             --light: #f8fafc;
             --gray: #94a3b8;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
@@ -53,10 +51,7 @@
 
         h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
         }
 
         h2 {
@@ -64,6 +59,7 @@
             position: relative;
             display: inline-block;
             margin-bottom: 3rem;
+            color: var(--dark);
         }
 
         h2::after {
@@ -73,7 +69,7 @@
             left: 0;
             width: 80px;
             height: 4px;
-            background: var(--gradient);
+            background: var(--primary);
             border-radius: 2px;
         }
 
@@ -94,7 +90,7 @@
             justify-content: center;
             gap: 0.5rem;
             padding: 0.75rem 2rem;
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
             border-radius: 9999px;
             font-weight: 600;
@@ -107,6 +103,7 @@
         }
 
         .btn:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
@@ -178,7 +175,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient);
+            background: var(--secondary);
             transition: var(--transition);
         }
 
@@ -199,7 +196,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-gray) 100%);
+            background: var(--dark);
             position: relative;
             overflow: hidden;
         }
@@ -232,6 +229,11 @@
             font-weight: 400;
             margin-bottom: 1rem;
             font-size: 1.2rem;
+        }
+
+        .hero-text h2 {
+            color: white;
+            margin-bottom: 1rem;
         }
 
         .hero-text p {
@@ -290,7 +292,7 @@
         }
 
         .skill-item {
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            background: var(--primary);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 2rem;
@@ -302,6 +304,7 @@
         }
 
         .skill-item:hover {
+            background: var(--primary-dark);
             transform: scale(1.05);
             box-shadow: var(--shadow-md);
         }
@@ -327,7 +330,7 @@
         .timeline-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient);
+            background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -500,7 +503,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient);
+            background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -682,8 +685,8 @@
                 <div class="hero-text">
                     <h3>👋 Bonjour, je suis</h3>
                     <h1>Kévin ZONGO</h1>
-                    <h2 style="background: none; -webkit-text-fill-color: initial; color: white;">Développeur Full Stack <span style="color: var(--secondary);">Flutter & Firebase</span></h2>
-                    <p>Je crée des applications mobiles et des sites web modernes, performants et évolutifs. J'ai publié une application sur le Play Store et accompagné plusieurs entreprises dans leur transformation numérique.</p>
+                    <h2>Développeur Full Stack <span style="color: var(--secondary);">Flutter & Firebase</span></h2>
+                    <p>Je crée des applications mobiles et des sites web modernes, performants et évolutifs. J'ai développé plusieurs applications mobiles, dont certaines disponibles sur le Play Store, et accompagné plusieurs entreprises dans leur transformation numérique.</p>
                     <div class="hero-btns">
                         <a href="#projects" class="btn">Voir mes projets <i class="fas fa-arrow-right"></i></a>
                         <a href="#contact" class="btn btn-outline">Me contacter</a>
@@ -703,7 +706,7 @@
             <div class="about-content container">
                 <div class="about-text">
                     <p>Passionné par le développement mobile et web, je suis basé à Ouagadougou. Après un Bac+2 en Mathématiques, j'ai choisi de mettre ma rigueur et ma logique au service de la création numérique.</p>
-                    <p>J'ai développé <strong>Christlight</strong>, un réseau social chrétien disponible sur Google Play, ainsi qu'un logiciel de gestion de stock multiplateforme. J'ai également réalisé deux sites e-commerce pour des entreprises locales, aujourd'hui en production.</p>
+                    <p>J'ai notamment développé <strong>Christlight</strong>, un réseau social chrétien disponible sur Google Play, ainsi qu'un logiciel de gestion de stock multiplateforme. J'ai également réalisé deux sites e-commerce pour des entreprises locales, aujourd'hui en production. D'autres projets sont en cours de développement.</p>
                     <h3>Compétences techniques</h3>
                     <div class="skills-grid">
                         <span class="skill-item">Flutter</span>
@@ -902,7 +905,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Kévin ZONGO. Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i> à Ouagadougou.</p>
+            <p>&copy; 2026 Kévin ZONGO. Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i> à Ouagadougou.</p>
         </div>
     </footer>
 
@@ -977,7 +980,7 @@
             // Simulation d'envoi
             setTimeout(() => {
                 btn.innerHTML = 'Message envoyé ! <i class="fas fa-check"></i>';
-                btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                btn.style.background = 'var(--secondary)';
                 contactForm.reset();
 
                 setTimeout(() => {
