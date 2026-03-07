@@ -43,6 +43,14 @@
             overflow-x: hidden;
         }
 
+        /* ---------- CONTAINER (ajouté pour le padding mobile) ---------- */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
         /* ---------- TYPOGRAPHIE ---------- */
         h1, h2, h3, h4 {
             font-weight: 700;
@@ -270,6 +278,7 @@
         /* ---------- ABOUT ---------- */
         .about {
             background-color: white;
+            padding: 5rem 0;
         }
 
         .about-content {
@@ -352,6 +361,7 @@
         /* ---------- PROJECTS ---------- */
         .projects {
             background: var(--light);
+            padding: 5rem 0;
         }
 
         .project-filters {
@@ -467,6 +477,7 @@
         /* ---------- CONTACT ---------- */
         .contact {
             background: white;
+            padding: 5rem 0;
         }
 
         .contact-content {
@@ -700,48 +711,50 @@
 
         <!-- About Section -->
         <section class="about" id="about">
-            <div class="section-title">
-                <h2>À propos de moi</h2>
-            </div>
-            <div class="about-content container">
-                <div class="about-text">
-                    <p>Passionné par le développement mobile et web, je suis basé à Ouagadougou. Après un Bac+2 en Mathématiques, j'ai choisi de mettre ma rigueur et ma logique au service de la création numérique.</p>
-                    <p>J'ai notamment développé <strong>Christlight</strong>, un réseau social chrétien disponible sur Google Play, ainsi qu'un logiciel de gestion de stock multiplateforme. J'ai également réalisé deux sites e-commerce pour des entreprises locales, aujourd'hui en production. D'autres projets sont en cours de développement.</p>
-                    <h3>Compétences techniques</h3>
-                    <div class="skills-grid">
-                        <span class="skill-item">Flutter</span>
-                        <span class="skill-item">Firebase</span>
-                        <span class="skill-item">HTML5/CSS3</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">REST API</span>
-                        <span class="skill-item">Provider</span>
-                        <span class="skill-item">Cloud Firestore</span>
-                        <span class="skill-item">FCM</span>
-                        <span class="skill-item">Play Console</span>
-                    </div>
+            <div class="container">
+                <div class="section-title">
+                    <h2>À propos de moi</h2>
                 </div>
-                <div class="timeline">
-                    <h3>Expérience clé</h3>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
-                        <div class="timeline-content">
-                            <h4>Développeur Full Stack Freelance</h4>
-                            <p>2023 - Aujourd'hui · Conception d'applications sur mesure pour clients locaux.</p>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Passionné par le développement mobile et web, je suis basé à Ouagadougou. Après un Bac+2 en Mathématiques, j'ai choisi de mettre ma rigueur et ma logique au service de la création numérique.</p>
+                        <p>J'ai notamment développé <strong>Christlight</strong>, un réseau social chrétien disponible sur Google Play, ainsi qu'un logiciel de gestion de stock multiplateforme. J'ai également réalisé deux sites e-commerce pour des entreprises locales, aujourd'hui en production. D'autres projets sont en cours de développement.</p>
+                        <h3>Compétences techniques</h3>
+                        <div class="skills-grid">
+                            <span class="skill-item">Flutter</span>
+                            <span class="skill-item">Firebase</span>
+                            <span class="skill-item">HTML5/CSS3</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">REST API</span>
+                            <span class="skill-item">Provider</span>
+                            <span class="skill-item">Cloud Firestore</span>
+                            <span class="skill-item">FCM</span>
+                            <span class="skill-item">Play Console</span>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <div class="timeline-content">
-                            <h4>Création de Christlight</h4>
-                            <p>2024 · Publication sur le Play Store, +100 téléchargements en 3 mois.</p>
+                    <div class="timeline">
+                        <h3>Expérience clé</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="timeline-content">
+                                <h4>Développeur Full Stack Freelance</h4>
+                                <p>2023 - Aujourd'hui · Conception d'applications sur mesure pour clients locaux.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-store"></i></div>
-                        <div class="timeline-content">
-                            <h4>Faso High Tech & Elite Smart Store</h4>
-                            <p>2024 · Sites e-commerce avec Firebase et JavaScript.</p>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="timeline-content">
+                                <h4>Création de Christlight</h4>
+                                <p>2024 · Publication sur le Play Store, +100 téléchargements en 3 mois.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-store"></i></div>
+                            <div class="timeline-content">
+                                <h4>Faso High Tech & Elite Smart Store</h4>
+                                <p>2024 · Sites e-commerce avec Firebase et JavaScript.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
