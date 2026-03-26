@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kévin ZONGO - Développeur Full Stack Flutter & Firebase</title>
-    <meta name="description" content="Portfolio de Kévin ZONGO, développeur spécialisé Flutter et Firebase. Découvrez mes projets, applications mobiles et sites web.">
+    <title>Kévin ZONGO - Développeur Web, Mobile & Desktop | Flutter & Firebase</title>
+    <meta name="description" content="Portfolio de Kévin ZONGO, développeur Web, Mobile et Desktop. Diplômé en Mathématiques Informatique (UV-BF), créateur de Christlight (50+ téléchargements).">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -245,7 +245,21 @@
 
         .hero-text h2 {
             color: white;
+            margin-bottom: 0.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+        }
+
+        .hero-text .badge-stack {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--secondary);
             margin-bottom: 1rem;
+            border: 1px solid rgba(16, 185, 129, 0.4);
         }
 
         .hero-text p {
@@ -443,6 +457,18 @@
             color: var(--gray);
             font-size: 0.95rem;
             margin-bottom: 1rem;
+        }
+
+        .download-badge {
+            display: inline-block;
+            background: #10b98120;
+            color: #10b981;
+            padding: 0.2rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            vertical-align: middle;
         }
 
         .project-tech {
@@ -689,8 +715,9 @@
                 <div class="hero-text">
                     <h3>👋 Bonjour, je suis</h3>
                     <h1>Kévin ZONGO</h1>
-                    <h2>Développeur Full Stack <span style="color: var(--secondary);">Flutter & Firebase</span></h2>
-                    <p>Je crée des applications mobiles et des sites web modernes, performants et évolutifs. J'ai développé plusieurs applications mobiles, dont certaines disponibles sur le Play Store, et accompagné plusieurs entreprises dans leur transformation numérique.</p>
+                    <div class="badge-stack">📱💻🖥️ Cross-platform expert</div>
+                    <h2>Développeur Web, Mobile & Desktop</h2>
+                    <p>Je conçois des applications mobiles, sites web modernes et logiciels desktop performants. Diplômé en Mathématiques & Informatique (UV-BF) et créateur de Christlight (50+ téléchargements). Flutter & Firebase me permettent de délivrer des solutions homogènes sur Android, iOS, Web, Windows et macOS.</p>
                     <div class="hero-btns">
                         <a href="#projects" class="btn">Voir mes projets <i class="fas fa-arrow-right"></i></a>
                         <a href="#contact" class="btn btn-outline">Me contacter</a>
@@ -710,43 +737,48 @@
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Passionné par le développement mobile et web, je suis basé à Ouagadougou. Je mets ma rigueur et ma logique au service de la création numérique pour concevoir des solutions performantes et adaptées aux besoins.</p>
-                        <p>J'ai notamment développé <strong>Christlight</strong>, un réseau social chrétien disponible sur Google Play, ainsi qu'un logiciel de gestion de stock multiplateforme. J'ai également réalisé deux sites e-commerce pour des entreprises locales, aujourd'hui en production. D'autres projets sont en cours de développement.</p>
+                        <p>Passionné par le développement multiplateforme, je suis basé à Ouagadougou. <strong>Titulaire d'une Licence en Mathématiques et Informatique</strong> de l'<strong>Université Virtuelle de Ouagadougou</strong>, j'allie rigueur mathématique et créativité technique pour construire des applications robustes, évolutives et parfaitement adaptées aux besoins utilisateurs.</p>
+                        <p>J'ai notamment développé <strong>Christlight</strong>, un réseau social chrétien qui compte aujourd'hui <strong>plus de 50 téléchargements sur Google Play</strong>. J'accompagne également les entreprises locales avec des solutions sur mesure : gestion de stock multiplateforme (Windows/Android) et sites e-commerce performants. Flutter me permet de déployer sur mobile, web et desktop à partir d'une base de code unique, garantissant rapidité et cohérence.</p>
                         <h3>Compétences techniques</h3>
                         <div class="skills-grid">
-                            <span class="skill-item">Flutter</span>
-                            <span class="skill-item">Firebase</span>
-                            <span class="skill-item">HTML5/CSS3</span>
-                            <span class="skill-item">JavaScript</span>
-                            <span class="skill-item">Git</span>
-                            <span class="skill-item">REST API</span>
-                            <span class="skill-item">Provider</span>
-                            <span class="skill-item">Cloud Firestore</span>
-                            <span class="skill-item">FCM</span>
-                            <span class="skill-item">Play Console</span>
+                            <span class="skill-item">Flutter (Mobile/Web/Desktop)</span>
+                            <span class="skill-item">Firebase (Auth/Firestore)</span>
+                            <span class="skill-item">HTML5/CSS3/JS</span>
+                            <span class="skill-item">Dart / Git</span>
+                            <span class="skill-item">RESTful APIs</span>
+                            <span class="skill-item">Provider / Riverpod</span>
+                            <span class="skill-item">FCM Notifications</span>
+                            <span class="skill-item">Play Console & Deployment</span>
                         </div>
                     </div>
                     <div class="timeline">
-                        <h3>Expérience clé</h3>
+                        <h3>Parcours & réalisations</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="timeline-content">
+                                <h4>Licence Mathématiques & Informatique</h4>
+                                <p>Université Virtuelle de Ouagadougou (UV-BF) · 2024 · Mention Bien</p>
+                            </div>
+                        </div>
                         <div class="timeline-item">
                             <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
                             <div class="timeline-content">
-                                <h4>Développeur Full Stack Freelance</h4>
-                                <p>2023 - Aujourd'hui · Conception d'applications sur mesure pour clients locaux.</p>
+                                <h4>Développeur Web, Mobile & Desktop Freelance</h4>
+                                <p>2023 - Aujourd'hui · Conception d'applications cross-platform pour clients locaux et internationaux.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-icon"><i class="fas fa-mobile-alt"></i></div>
                             <div class="timeline-content">
-                                <h4>Création de Christlight</h4>
-                                <p>2024 · Publication sur le Play Store, +100 téléchargements en 3 mois.</p>
+                                <h4>Christlight - Réseau social chrétien</h4>
+                                <p>2024 · Publié sur Play Store → <strong>50+ téléchargements</strong> · Note ⭐ 4.8</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-icon"><i class="fas fa-store"></i></div>
                             <div class="timeline-content">
                                 <h4>Faso High Tech & Elite Smart Store</h4>
-                                <p>2024 · Sites e-commerce avec Firebase et JavaScript.</p>
+                                <p>2024 · Sites e-commerce avec Firebase & JavaScript, production active.</p>
                             </div>
                         </div>
                     </div>
@@ -772,32 +804,33 @@
                             <img src="images/christlight.jpg" alt="Christlight" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <h3>Christlight</h3>
-                            <p>Réseau social chrétien avec publications, commentaires, messages privés et questions anonymes.</p>
+                            <h3>Christlight <span class="download-badge"><i class="fas fa-download"></i> 50+ téléchargements</span></h3>
+                            <p>Réseau social chrétien avec publications, commentaires, messagerie privée et questions anonymes. Expérience utilisateur fluide et modération intégrée.</p>
                             <div class="project-tech">
                                 <span>Flutter</span>
                                 <span>Firebase Auth</span>
                                 <span>Firestore</span>
-                                <span>Storage</span>
+                                <span>Cloud Storage</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://play.google.com/store/apps/details?id=com.siontech.christlight" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Play Store</a>
-                                <a href="#"><i class="fab fa-github"></i> Code</a>
+                                <a href="#"><i class="fab fa-github"></i> Code source</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Gestion de stock -->
+                    <!-- Gestion de stock (Desktop + Mobile) -->
                     <div class="project-card" data-category="mobile">
                         <div class="project-img">
                             <img src="images/stock-management.png" alt="Gestion de stock" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <h3>Gestion de stock</h3>
-                            <p>Application multiplateforme (Android/Windows) pour le suivi des entrées/sorties avec génération de rapports.</p>
+                            <h3>Gestion de stock Multiplateforme</h3>
+                            <p>Application Windows / Android pour le suivi des entrées/sorties, génération de rapports Excel et gestion des fournisseurs. Idéal pour commerces et PME.</p>
                             <div class="project-tech">
-                                <span>Flutter</span>
+                                <span>Flutter Desktop</span>
                                 <span>Firebase</span>
-                                <span>Excel export</span>
+                                <span>Excel API</span>
+                                <span>Provider</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" onclick="alert('Version démo disponible sur demande')"><i class="fas fa-info-circle"></i> En savoir plus</a>
@@ -811,7 +844,7 @@
                         </div>
                         <div class="project-info">
                             <h3>Faso High Tech</h3>
-                            <p>Site e-commerce pour produits high-tech avec panier, filtres et espace admin.</p>
+                            <p>Site e-commerce pour produits high-tech avec panier dynamique, filtres avancés et interface admin sécurisée. Performance et SEO optimisés.</p>
                             <div class="project-tech">
                                 <span>HTML/CSS</span>
                                 <span>JavaScript</span>
@@ -829,7 +862,7 @@
                         </div>
                         <div class="project-info">
                             <h3>Elite Smart Store</h3>
-                            <p>Boutique spécialisée dans les montres connectées. Interface moderne et responsive.</p>
+                            <p>Boutique spécialisée dans les montres connectées et accessoires. Design responsive, paiement sécurisé et gestion de catalogue en temps réel.</p>
                             <div class="project-tech">
                                 <span>HTML/CSS</span>
                                 <span>JavaScript</span>
@@ -853,7 +886,7 @@
                 <div class="contact-content">
                     <div class="contact-info">
                         <h3>Envie de collaborer ?</h3>
-                        <p>Que vous ayez une idée d'application, un besoin de site web ou une question, je suis à votre écoute. Réponse sous 24h.</p>
+                        <p>Que vous ayez besoin d'une application mobile, d'un site vitrine, d'un logiciel de gestion desktop ou d'une refonte complète, je suis à votre écoute. Réponse sous 24h.</p>
                         <div class="contact-details">
                             <div class="contact-item">
                                 <div class="contact-icon"><i class="fas fa-envelope"></i></div>
@@ -903,7 +936,7 @@
     <footer>
         <div class="footer-content">
             <div class="logo">Kévin<span>ZONGO</span></div>
-            <p>Développeur Full Stack spécialisé Flutter & Firebase</p>
+            <p>Développeur Web, Mobile & Desktop | Flutter • Firebase • Cross-Platform</p>
             <div class="social-links">
                 <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -911,7 +944,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 Kévin ZONGO. Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i> à Ouagadougou.</p>
+            <p>&copy; 2026 Kévin ZONGO. Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i> à Ouagadougou — Licence Math&Info (UV-BF) • Christlight 50+ téléchargements</p>
         </div>
     </footer>
 
@@ -951,7 +984,6 @@
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
@@ -967,7 +999,7 @@
             });
         });
 
-        // Gestion du formulaire de contact (simple alerte)
+        // Gestion du formulaire de contact
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Merci pour votre message ! Kévin vous répondra très prochainement.');
