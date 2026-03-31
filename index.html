@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kévin ZONGO - Développeur Web, Mobile & Desktop | Flutter & Firebase</title>
-    <meta name="description" content="Portfolio de Kévin ZONGO, développeur Web, Mobile et Desktop. Diplômé en Mathématiques Informatique (UV-BF), créateur de Christlight, réseau social chrétien disponible sur Play Store.">
+    <title>Kévin ZONGO - Créateur d'applications et sites web | Solutions digitales sur mesure</title>
+    <meta name="description" content="Portfolio de Kévin ZONGO, développeur d'applications mobiles, sites web et logiciels de gestion. Diplômé en Mathématiques Informatique (UV-BF), créateur de Christlight, réseau social chrétien disponible sur Play Store.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -311,29 +311,33 @@
             margin-bottom: 1.5rem;
         }
 
-        .skills-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 1rem;
             margin: 2rem 0;
         }
 
-        .skill-item {
-            background: var(--primary);
+        .service-item {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
+            padding: 1rem;
+            border-radius: 1rem;
             text-align: center;
-            font-size: 0.9rem;
             font-weight: 500;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
         }
 
-        .skill-item:hover {
-            background: var(--primary-dark);
-            transform: scale(1.05);
+        .service-item:hover {
+            transform: translateY(-5px);
             box-shadow: var(--shadow-md);
+        }
+
+        .service-item i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         .timeline {
@@ -674,8 +678,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -687,7 +691,7 @@
             <ul class="nav-links">
                 <li><a href="#home" class="active">Accueil</a></li>
                 <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
+                <li><a href="#projects">Réalisations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -703,12 +707,12 @@
                 <div class="hero-text">
                     <h3>👋 Bonjour, je suis</h3>
                     <h1>Kévin ZONGO</h1>
-                    <div class="badge-stack">📱💻🖥️ Cross-platform expert</div>
-                    <h2>Développeur Web, Mobile & Desktop</h2>
-                    <p>Je conçois des applications mobiles, sites web modernes et logiciels desktop performants. Diplômé en Mathématiques & Informatique (UV-BF) et créateur de Christlight, un réseau social chrétien disponible sur Play Store. Flutter & Firebase me permettent de délivrer des solutions homogènes sur Android, iOS, Web, Windows et macOS.</p>
+                    <div class="badge-stack">📱💻🖥️ Je donne vie à vos idées digitales</div>
+                    <h2>Je crée des applications et des sites web qui répondent à vos besoins</h2>
+                    <p>Vous avez un projet ? Je vous accompagne de A à Z pour le concrétiser : application mobile, site internet, logiciel de gestion... Je transforme vos idées en solutions digitales simples et efficaces.</p>
                     <div class="hero-btns">
-                        <a href="#projects" class="btn">Voir mes projets <i class="fas fa-arrow-right"></i></a>
-                        <a href="#contact" class="btn btn-outline">Me contacter</a>
+                        <a href="#projects" class="btn">Découvrir mes réalisations <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-outline">Parler de mon projet</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -721,27 +725,42 @@
         <section class="about" id="about">
             <div class="container">
                 <div class="section-title">
-                    <h2>À propos de moi</h2>
+                    <h2>Ce que je fais pour vous</h2>
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Passionné par le développement multiplateforme, je suis basé à Ouagadougou. <strong>Titulaire d'une Licence en Mathématiques et Informatique</strong> de l'<strong>Université Virtuelle de Ouagadougou</strong>, j'allie rigueur mathématique et créativité technique pour construire des applications robustes, évolutives et parfaitement adaptées aux besoins utilisateurs.</p>
-                        <p>J'ai notamment développé <strong>Christlight</strong>, un réseau social chrétien disponible sur Google Play. J'accompagne également les entreprises locales avec des solutions sur mesure : gestion de stock multiplateforme (Windows/Android) et sites web performants. Flutter me permet de déployer sur mobile, web et desktop à partir d'une base de code unique, garantissant rapidité et cohérence.</p>
-                        <h3>Compétences techniques</h3>
-                        <div class="skills-grid">
-                            <span class="skill-item">Flutter (Mobile/Web/Desktop)</span>
-                            <span class="skill-item">Firebase (Auth/Firestore)</span>
-                            <span class="skill-item">Supabase</span>
-                            <span class="skill-item">HTML5/CSS3/JS</span>
-                            <span class="skill-item">Dart / Git</span>
-                            <span class="skill-item">RESTful APIs</span>
-                            <span class="skill-item">Provider / Riverpod</span>
-                            <span class="skill-item">FCM Notifications</span>
-                            <span class="skill-item">Play Console & Deployment</span>
+                        <p>Basé à Ouagadougou, je suis <strong>diplômé en Mathématiques et Informatique</strong> et je mets mes compétences au service des entrepreneurs, commerçants et associations qui souhaitent se développer grâce au digital.</p>
+                        <p>J'ai créé <strong>Christlight</strong>, un réseau social chrétien disponible sur Play Store, et j'accompagne des entreprises locales avec des solutions sur mesure. Mon objectif : vous offrir des outils digitaux qui vous ressemblent et qui font la différence.</p>
+                        <h3>Mes services</h3>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                Applications mobiles (Android)
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-laptop-code"></i>
+                                Sites web professionnels
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-chart-line"></i>
+                                Sites e-commerce
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-tasks"></i>
+                                Logiciels de gestion
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-palette"></i>
+                                Refonte de sites existants
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-headset"></i>
+                                Maintenance & Support
+                            </div>
                         </div>
                     </div>
                     <div class="timeline">
-                        <h3>Parcours & réalisations</h3>
+                        <h3>Mon parcours</h3>
                         <div class="timeline-item">
                             <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
                             <div class="timeline-content">
@@ -752,22 +771,22 @@
                         <div class="timeline-item">
                             <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
                             <div class="timeline-content">
-                                <h4>Développeur Web, Mobile & Desktop Freelance</h4>
-                                <p>2023 - Aujourd'hui · Conception d'applications cross-platform pour clients locaux et internationaux.</p>
+                                <h4>Créateur d'applications et sites web</h4>
+                                <p>2023 - Aujourd'hui · Accompagnement de clients locaux et internationaux dans leur transformation digitale.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="timeline-icon"><i class="fas fa-users"></i></div>
                             <div class="timeline-content">
                                 <h4>Christlight - Réseau social chrétien</h4>
-                                <p>2024 · Disponible sur Play Store · Note ⭐ 4.8</p>
+                                <p>2024 · Une communauté en ligne pour les chrétiens · Disponible sur Play Store</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-icon"><i class="fas fa-store"></i></div>
                             <div class="timeline-content">
-                                <h4>Faso High Tech & Elite Smart Store</h4>
-                                <p>2024 · Sites e-commerce avec Firebase & JavaScript, production active.</p>
+                                <h4>Boutiques en ligne</h4>
+                                <p>Création de sites e-commerce pour Faso High Tech et Elite Smart Store</p>
                             </div>
                         </div>
                     </div>
@@ -794,16 +813,14 @@
                         </div>
                         <div class="project-info">
                             <h3>Christlight</h3>
-                            <p>Réseau social chrétien avec publications, commentaires, messagerie privée et questions anonymes. Expérience utilisateur fluide et modération intégrée. Disponible sur Play Store.</p>
+                            <p>Réseau social chrétien : partage de contenus, échanges privés, questions anonymes. Une communauté bienveillante accessible sur mobile.</p>
                             <div class="project-tech">
-                                <span>Flutter</span>
-                                <span>Firebase Auth</span>
-                                <span>Firestore</span>
-                                <span>Cloud Storage</span>
+                                <span>Application mobile</span>
+                                <span>Base de données temps réel</span>
+                                <span>Authentification sécurisée</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.siontech.christlight" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Play Store</a>
-                                <a href="#"><i class="fab fa-github"></i> Code source</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.siontech.christlight" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Télécharger</a>
                             </div>
                         </div>
                     </div>
@@ -813,13 +830,12 @@
                             <img src="images/stock-management.png" alt="Gestion de stock" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <h3>Gestion de stock Multiplateforme</h3>
-                            <p>Application Windows / Android pour le suivi des entrées/sorties, génération de rapports Excel et gestion des fournisseurs. Idéal pour commerces et PME.</p>
+                            <h3>Logiciel de gestion de stock</h3>
+                            <p>Application pour Windows et Android qui permet de suivre vos entrées/sorties, générer des rapports et gérer vos fournisseurs. Idéal pour les commerces et PME.</p>
                             <div class="project-tech">
-                                <span>Flutter Desktop</span>
-                                <span>Firebase</span>
-                                <span>Excel API</span>
-                                <span>Provider</span>
+                                <span>Logiciel de gestion</span>
+                                <span>Multiplateforme</span>
+                                <span>Export Excel</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" onclick="alert('Version démo disponible sur demande')"><i class="fas fa-info-circle"></i> En savoir plus</a>
@@ -833,16 +849,14 @@
                         </div>
                         <div class="project-info">
                             <h3>Siloe - Agence Marketing & Communication</h3>
-                            <p>Site web professionnel pour une agence de marketing et de communication. Présentation des services, portfolio clients, et formulaire de contact avec gestion des données via Supabase.</p>
+                            <p>Site vitrine pour une agence de communication. Présentation des services, portfolio clients, et formulaire de contact avec sauvegarde des demandes.</p>
                             <div class="project-tech">
-                                <span>HTML5/CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Supabase</span>
-                                <span>PostgreSQL</span>
+                                <span>Site vitrine</span>
+                                <span>Formulaire de contact</span>
+                                <span>Base de données</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" onclick="alert('Site disponible prochainement')"><i class="fas fa-external-link-alt"></i> Voir le site</a>
-                                <a href="#"><i class="fab fa-github"></i> Code source</a>
                             </div>
                         </div>
                     </div>
@@ -853,14 +867,14 @@
                         </div>
                         <div class="project-info">
                             <h3>Faso High Tech</h3>
-                            <p>Site e-commerce pour produits high-tech avec panier dynamique, filtres avancés et interface admin sécurisée. Performance et SEO optimisés.</p>
+                            <p>Boutique en ligne pour produits high-tech. Panier d'achat, filtres de recherche, interface d'administration pour gérer les produits.</p>
                             <div class="project-tech">
-                                <span>HTML/CSS</span>
-                                <span>JavaScript</span>
-                                <span>Firebase</span>
+                                <span>Site e-commerce</span>
+                                <span>Panier d'achat</span>
+                                <span>Interface admin</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://fasohightech.com" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visiter</a>
+                                <a href="https://fasohightech.com" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visiter la boutique</a>
                             </div>
                         </div>
                     </div>
@@ -871,14 +885,14 @@
                         </div>
                         <div class="project-info">
                             <h3>Elite Smart Store</h3>
-                            <p>Boutique spécialisée dans les montres connectées et accessoires. Design responsive, paiement sécurisé et gestion de catalogue en temps réel.</p>
+                            <p>Boutique spécialisée dans les montres connectées et accessoires. Design moderne, catalogue en temps réel, paiement sécurisé.</p>
                             <div class="project-tech">
-                                <span>HTML/CSS</span>
-                                <span>JavaScript</span>
-                                <span>Firebase</span>
+                                <span>Site e-commerce</span>
+                                <span>Design responsive</span>
+                                <span>Catalogue produits</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://elitesmartstore.com" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visiter</a>
+                                <a href="https://elitesmartstore.com" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visiter la boutique</a>
                             </div>
                         </div>
                     </div>
@@ -890,12 +904,12 @@
         <section class="contact" id="contact">
             <div class="container">
                 <div class="section-title">
-                    <h2>Discutons de votre projet</h2>
+                    <h2>Parlons de votre projet</h2>
                 </div>
                 <div class="contact-content">
                     <div class="contact-info">
-                        <h3>Envie de collaborer ?</h3>
-                        <p>Que vous ayez besoin d'une application mobile, d'un site vitrine, d'un logiciel de gestion desktop ou d'une refonte complète, je suis à votre écoute. Réponse sous 24h.</p>
+                        <h3>Vous avez une idée ?</h3>
+                        <p>Application mobile, site internet, boutique en ligne, logiciel de gestion... Discutons de votre projet ensemble. Je vous réponds sous 24h.</p>
                         <div class="contact-details">
                             <div class="contact-item">
                                 <div class="contact-icon"><i class="fas fa-envelope"></i></div>
@@ -907,7 +921,7 @@
                             <div class="contact-item">
                                 <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                                 <div>
-                                    <h4>Téléphone</h4>
+                                    <h4>Téléphone / WhatsApp</h4>
                                     <p>+226 62 93 27 10</p>
                                 </div>
                             </div>
@@ -929,10 +943,10 @@
                                 <input type="email" placeholder="Votre email" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Sujet" required>
+                                <input type="text" placeholder="Sujet (ex: Création d'une application)" required>
                             </div>
                             <div class="form-group">
-                                <textarea placeholder="Votre message" required></textarea>
+                                <textarea placeholder="Décrivez-moi votre projet..." required></textarea>
                             </div>
                             <button type="submit" class="btn">Envoyer <i class="fas fa-paper-plane"></i></button>
                         </form>
@@ -945,15 +959,15 @@
     <footer>
         <div class="footer-content">
             <div class="logo">Kévin<span>ZONGO</span></div>
-            <p>Développeur Web, Mobile & Desktop | Flutter • Firebase • Supabase • Cross-Platform</p>
+            <p>Je transforme vos idées en solutions digitales sur mesure</p>
             <div class="social-links">
                 <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 Kévin ZONGO. Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i> à Ouagadougou — Licence Math&Info (UV-BF) • Christlight - Réseau social chrétien disponible sur Play Store</p>
+            <p>&copy; 2026 Kévin ZONGO - Créateur d'applications et sites web à Ouagadougou</p>
         </div>
     </footer>
 
@@ -1011,7 +1025,7 @@
         // Gestion du formulaire de contact
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Merci pour votre message ! Kévin vous répondra très prochainement.');
+            alert('Merci pour votre message ! Je vous répondrai dans les 24h.');
             e.target.reset();
         });
     </script>
