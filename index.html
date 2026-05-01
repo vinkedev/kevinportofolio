@@ -50,6 +50,188 @@
             padding: 0 5%;
         }
 
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInStagger {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .animate-on-scroll.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-text {
+            opacity: 0;
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        .hero-image {
+            opacity: 0;
+            animation: fadeInRight 0.8s ease 0.2s forwards;
+        }
+
+        .service-item {
+            opacity: 0;
+            animation: slideInStagger 0.5s ease forwards;
+        }
+
+        .service-item:nth-child(1) { animation-delay: 0.1s; }
+        .service-item:nth-child(2) { animation-delay: 0.2s; }
+        .service-item:nth-child(3) { animation-delay: 0.3s; }
+        .service-item:nth-child(4) { animation-delay: 0.4s; }
+        .service-item:nth-child(5) { animation-delay: 0.5s; }
+        .service-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .project-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-item {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s ease;
+        }
+
+        .contact-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-form {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.5s ease;
+        }
+
+        .contact-form.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .badge-stack {
+            animation: pulse 2s infinite;
+        }
+
+        .hero-image img {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .btn {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-item {
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
         /* ---------- TYPOGRAPHIE ---------- */
         h1, h2, h3, h4 {
             font-weight: 700;
@@ -78,6 +260,11 @@
             height: 4px;
             background: var(--primary);
             border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .section-title:hover h2::after {
+            width: 120px;
         }
 
         .section-title {
@@ -159,6 +346,11 @@
             font-weight: 800;
             color: white;
             text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo span {
@@ -200,6 +392,11 @@
             color: white;
             font-size: 1.8rem;
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger:hover {
+            transform: rotate(90deg);
         }
 
         /* ---------- HERO ---------- */
@@ -290,7 +487,7 @@
         }
 
         .hero-image img:hover {
-            transform: perspective(1000px) rotateY(0deg);
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
         }
 
         /* ---------- ABOUT ---------- */
@@ -327,10 +524,11 @@
             font-weight: 500;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .service-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
             box-shadow: var(--shadow-md);
         }
 
@@ -338,6 +536,11 @@
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover i {
+            transform: scale(1.2);
         }
 
         .timeline {
@@ -356,6 +559,12 @@
             display: flex;
             gap: 1rem;
             margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
         }
 
         .timeline-icon {
@@ -368,6 +577,12 @@
             justify-content: center;
             color: white;
             flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-icon {
+            transform: scale(1.1);
+            background: var(--secondary);
         }
 
         .timeline-content h4 {
@@ -409,6 +624,8 @@
             background: var(--primary);
             color: white;
             border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
         .project-grid {
@@ -422,9 +639,10 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             top: 0;
+            cursor: pointer;
         }
 
         .project-card:hover {
@@ -445,7 +663,7 @@
         }
 
         .project-card:hover .project-img img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .project-info {
@@ -455,6 +673,11 @@
         .project-info h3 {
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover .project-info h3 {
+            color: var(--primary);
         }
 
         .project-info p {
@@ -477,6 +700,13 @@
             border-radius: 1rem;
             font-size: 0.8rem;
             font-family: 'Fira Code', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .project-tech span:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
         }
 
         .project-links {
@@ -491,10 +721,12 @@
             align-items: center;
             gap: 0.25rem;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .project-links a:hover {
             color: var(--primary-dark);
+            transform: translateX(5px);
         }
 
         /* ---------- CONTACT ---------- */
@@ -526,7 +758,8 @@
             padding: 1rem;
             background: var(--light);
             border-radius: var(--border-radius);
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .contact-item:hover {
@@ -544,6 +777,12 @@
             justify-content: center;
             color: white;
             font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+            background: var(--secondary);
         }
 
         .contact-form {
@@ -551,6 +790,11 @@
             padding: 2rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form:hover {
+            box-shadow: var(--shadow-lg);
         }
 
         .form-group {
@@ -574,6 +818,7 @@
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            transform: scale(1.01);
         }
 
         .form-group textarea {
@@ -613,14 +858,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             color: white;
             text-decoration: none;
         }
 
         .social-link:hover {
             background: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-5px) rotate(5deg);
         }
 
         .copyright {
@@ -794,7 +1039,7 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section - Sites web en premier -->
         <section class="projects" id="projects">
             <div class="container">
                 <div class="section-title">
@@ -802,46 +1047,11 @@
                 </div>
                 <div class="project-filters">
                     <button class="filter-btn active" data-filter="all">Tous</button>
-                    <button class="filter-btn" data-filter="mobile">Applications</button>
                     <button class="filter-btn" data-filter="web">Sites web</button>
+                    <button class="filter-btn" data-filter="mobile">Applications</button>
                 </div>
                 <div class="project-grid">
-                    <!-- Christlight -->
-                    <div class="project-card" data-category="mobile">
-                        <div class="project-img">
-                            <img src="images/christlight.jpg" alt="Christlight" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3>Christlight</h3>
-                            <p>Réseau social chrétien : partage de contenus, échanges privés, questions anonymes. Une communauté bienveillante accessible sur mobile.</p>
-                            <div class="project-tech">
-                                <span>Application mobile</span>
-                                <span>Base de données temps réel</span>
-                                <span>Authentification sécurisée</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.siontech.christlight" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Télécharger</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Gestion de stock (Desktop + Mobile) -->
-                    <div class="project-card" data-category="mobile">
-                        <div class="project-img">
-                            <img src="images/stock-management.png" alt="Logiciel de gestion de stock" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3>Logiciel de gestion de stock</h3>
-                            <p>Application pour Windows et Android qui permet de suivre vos entrées/sorties, générer des rapports et gérer vos fournisseurs. Idéal pour les commerces et PME.</p>
-                            <div class="project-tech">
-                                <span>Logiciel de gestion</span>
-                                <span>Multiplateforme</span>
-                                <span>Export Excel</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" onclick="alert('Version démo disponible sur demande')"><i class="fas fa-info-circle"></i> En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- SITES WEB EN PREMIER -->
                     <!-- Siloe - Agence Marketing (lien actif vers le site réel) -->
                     <div class="project-card" data-category="web">
                         <div class="project-img">
@@ -893,6 +1103,43 @@
                             </div>
                             <div class="project-links">
                                 <a href="https://elitesmartstore.com" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visiter la boutique</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- APPLICATIONS EN SECOND -->
+                    <!-- Christlight -->
+                    <div class="project-card" data-category="mobile">
+                        <div class="project-img">
+                            <img src="images/christlight.jpg" alt="Christlight" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Christlight</h3>
+                            <p>Réseau social chrétien : partage de contenus, échanges privés, questions anonymes. Une communauté bienveillante accessible sur mobile.</p>
+                            <div class="project-tech">
+                                <span>Application mobile</span>
+                                <span>Base de données temps réel</span>
+                                <span>Authentification sécurisée</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://play.google.com/store/apps/details?id=com.siontech.christlight" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Télécharger</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gestion de stock (Desktop + Mobile) -->
+                    <div class="project-card" data-category="mobile">
+                        <div class="project-img">
+                            <img src="images/stock-management.png" alt="Logiciel de gestion de stock" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Logiciel de gestion de stock</h3>
+                            <p>Application pour Windows et Android qui permet de suivre vos entrées/sorties, générer des rapports et gérer vos fournisseurs. Idéal pour les commerces et PME.</p>
+                            <div class="project-tech">
+                                <span>Logiciel de gestion</span>
+                                <span>Multiplateforme</span>
+                                <span>Export Excel</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" onclick="alert('Version démo disponible sur demande')"><i class="fas fa-info-circle"></i> En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -1028,6 +1275,24 @@
             alert('Merci pour votre message ! Je vous répondrai dans les 24h.');
             e.target.reset();
         });
+
+        // ========== ANIMATIONS AU SCROLL ==========
+        const animateElements = document.querySelectorAll('.timeline-item, .project-card, .contact-item, .contact-form, .service-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+
+        animateElements.forEach(el => observer.observe(el));
+
+        // Animation des éléments avec la classe animate-on-scroll
+        const scrollElements = document.querySelectorAll('.animate-on-scroll');
+        scrollElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
